@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensors - Pollution Control System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>🌍 Pollution Control</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="sensors.html" class="nav-item active">
+                    <span class="nav-icon">📡</span>
+                    <span>Sensors</span>
+                </a>
+                <a href="alerts.html" class="nav-item">
+                    <span class="nav-icon">🔔</span>
+                    <span>Alerts</span>
+                </a>
+                <a href="reports.html" class="nav-item">
+                    <span class="nav-icon">📈</span>
+                    <span>Reports</span>
+                </a>
+                <a href="#" class="nav-item logout">
+                    <span class="nav-icon">🚪</span>
+                    <span>Logout</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <h1 class="page-title">Sensors</h1>
+                <div class="header-right">
+                    <div class="system-status" id="systemStatus">
+                        <span class="status-dot normal"></span>
+                        <span>System Normal</span>
+                    </div>
+                    <div class="user-icon">👤</div>
+                </div>
+            </header>
+
+            <!-- Sensors Grid -->
+            <div class="sensors-grid">
+                <div class="sensor-card">
+                    <div class="sensor-icon">💨</div>
+                    <h3>CO₂ Sensor</h3>
+                    <div class="sensor-value" id="sensorCo2">420 <span>ppm</span></div>
+                    <div class="sensor-status">
+                        <span class="status-badge active">● Active</span>
+                    </div>
+                    <div class="sensor-time" id="sensorCo2Time">Last updated: Just now</div>
+                </div>
+
+                <div class="sensor-card">
+                    <div class="sensor-icon">🌫️</div>
+                    <h3>PM2.5 Sensor</h3>
+                    <div class="sensor-value" id="sensorPm25">80 <span>µg/m³</span></div>
+                    <div class="sensor-status">
+                        <span class="status-badge active">● Active</span>
+                    </div>
+                    <div class="sensor-time" id="sensorPm25Time">Last updated: Just now</div>
+                </div>
+
+                <div class="sensor-card">
+                    <div class="sensor-icon">🧪</div>
+                    <h3>NOx Sensor</h3>
+                    <div class="sensor-value" id="sensorNox">25 <span>ppb</span></div>
+                    <div class="sensor-status">
+                        <span class="status-badge active">● Active</span>
+                    </div>
+                    <div class="sensor-time" id="sensorNoxTime">Last updated: Just now</div>
+                </div>
+
+                <div class="sensor-card">
+                    <div class="sensor-icon">🌡️</div>
+                    <h3>Temperature Sensor</h3>
+                    <div class="sensor-value" id="sensorTemp">32 <span>°C</span></div>
+                    <div class="sensor-status">
+                        <span class="status-badge active">● Active</span>
+                    </div>
+                    <div class="sensor-time" id="sensorTempTime">Last updated: Just now</div>
+                </div>
+            </div>
+
+            <!-- Additional Info -->
+            <div class="card">
+                <h3>Sensor Network Information</h3>
+                <p>All sensors are operating normally. Data is updated every 2 seconds. Sensors are connected via industrial IoT network with 99.9% uptime.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/sensors.js"></script>
+</body>
+</html>

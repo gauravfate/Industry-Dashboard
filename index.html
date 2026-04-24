@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Pollution Control System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>🌍 Pollution Control</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item active">
+                    <span class="nav-icon">📊</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="sensors.html" class="nav-item">
+                    <span class="nav-icon">📡</span>
+                    <span>Sensors</span>
+                </a>
+                <a href="alerts.html" class="nav-item">
+                    <span class="nav-icon">🔔</span>
+                    <span>Alerts</span>
+                </a>
+                <a href="reports.html" class="nav-item">
+                    <span class="nav-icon">📈</span>
+                    <span>Reports</span>
+                </a>
+                <a href="#" class="nav-item logout">
+                    <span class="nav-icon">🚪</span>
+                    <span>Logout</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <h1 class="page-title">Dashboard</h1>
+                <div class="header-right">
+                    <div class="system-status" id="systemStatus">
+                        <span class="status-dot normal"></span>
+                        <span>System Normal</span>
+                    </div>
+                    <div class="user-icon">👤</div>
+                </div>
+            </header>
+
+            <!-- Zone Selector -->
+            <div class="zone-selector">
+                <button class="zone-btn active" data-zone="zoneA">Zone A</button>
+                <button class="zone-btn" data-zone="factory">Factory</button>
+                <button class="zone-btn" data-zone="outdoor">Outdoor</button>
+            </div>
+
+            <!-- Dashboard Grid -->
+            <div class="dashboard-grid">
+                <!-- Pollution Cards -->
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-icon">💨</span>
+                            <h3>CO₂ Level</h3>
+                        </div>
+                        <div class="card-value" id="co2Value">420</div>
+                        <div class="card-unit">ppm</div>
+                        <div class="card-status" id="co2Status">Moderate</div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-icon">🌫️</span>
+                            <h3>PM2.5 Level</h3>
+                        </div>
+                        <div class="card-value" id="pm25Value">80</div>
+                        <div class="card-unit">µg/m³</div>
+                        <div class="card-status" id="pm25Status">Moderate</div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-icon">🧪</span>
+                            <h3>NOx Level</h3>
+                        </div>
+                        <div class="card-value" id="noxValue">25</div>
+                        <div class="card-unit">ppb</div>
+                        <div class="card-status" id="noxStatus">Moderate</div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-icon">🌡️</span>
+                            <h3>Temperature</h3>
+                        </div>
+                        <div class="card-value" id="tempValue">32</div>
+                        <div class="card-unit">°C</div>
+                        <div class="card-status" id="tempStatus">High</div>
+                    </div>
+                </div>
+
+                <!-- Chart Section -->
+                <div class="card chart-card">
+                    <h3>Pollution Trend (Last 24 Hours)</h3>
+                    <canvas id="pollutionChart" width="400" height="200"></canvas>
+                </div>
+
+                <!-- Controls and Alerts -->
+                <div class="two-columns">
+                    <!-- Control Systems -->
+                    <div class="card">
+                        <h3>Control Systems</h3>
+                        <div class="control-item">
+                            <div class="control-info">
+                                <span>🌬️ Air Filter</span>
+                                <span class="control-status" id="filterStatus">OFF</span>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="filterToggle">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="control-item">
+                            <div class="control-info">
+                                <span>🌀 Exhaust Fan</span>
+                                <span class="control-status" id="fanStatus">OFF</span>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" id="fanToggle">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Alerts Preview -->
+                    <div class="card">
+                        <h3>Recent Alerts</h3>
+                        <div class="alerts-list" id="alertsPreview">
+                            <div class="alert-item moderate">
+                                <span>📊</span>
+                                <div>
+                                    <p>System running normal</p>
+                                    <small>Just now</small>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="alerts.html" class="view-all">View all alerts →</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - Pollution Control System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>🌍 Pollution Control</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span>Dashboard</span>
+                </a>
+                <a href="sensors.html" class="nav-item">
+                    <span class="nav-icon">📡</span>
+                    <span>Sensors</span>
+                </a>
+                <a href="alerts.html" class="nav-item">
+                    <span class="nav-icon">🔔</span>
+                    <span>Alerts</span>
+                </a>
+                <a href="reports.html" class="nav-item active">
+                    <span class="nav-icon">📈</span>
+                    <span>Reports</span>
+                </a>
+                <a href="#" class="nav-item logout">
+                    <span class="nav-icon">🚪</span>
+                    <span>Logout</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <h1 class="page-title">Reports</h1>
+                <div class="header-right">
+                    <div class="system-status" id="systemStatus">
+                        <span class="status-dot normal"></span>
+                        <span>System Normal</span>
+                    </div>
+                    <div class="user-icon">👤</div>
+                </div>
+            </header>
+
+            <!-- Summary Cards -->
+            <div class="reports-summary">
+                <div class="summary-card">
+                    <div class="summary-icon">💨</div>
+                    <div class="summary-info">
+                        <h4>Average CO₂</h4>
+                        <div class="summary-value" id="avgCo2">425 ppm</div>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">🌫️</div>
+                    <div class="summary-info">
+                        <h4>Max PM2.5</h4>
+                        <div class="summary-value" id="maxPm25">85 µg/m³</div>
+                    </div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-icon">📊</div>
+                    <div class="summary-info">
+                        <h4>System Status</h4>
+                        <div class="summary-value" id="sysStatusReport">Normal</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bar Chart -->
+            <div class="card">
+                <h3>Zone Comparison Report</h3>
+                <canvas id="reportChart" width="400" height="200"></canvas>
+            </div>
+
+            <!-- Detailed Stats -->
+            <div class="card">
+                <h3>Detailed Statistics</h3>
+                <div class="stats-table">
+                    <div class="stat-row">
+                        <span>Zone A Average CO₂:</span>
+                        <span id="zoneACo2">420 ppm</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>Factory Average CO₂:</span>
+                        <span id="factoryCo2">450 ppm</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>Outdoor Average CO₂:</span>
+                        <span id="outdoorCo2">380 ppm</span>
+                    </div>
+                    <div class="stat-row">
+                        <span>24h Alert Count:</span>
+                        <span id="alertCount">0</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/reports.js"></script>
+</body>
+</html>
